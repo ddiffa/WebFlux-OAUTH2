@@ -1,7 +1,7 @@
 package com.ddiffa.springexample.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 
@@ -21,7 +21,7 @@ public class User {
     @Column
     private String address;
     @Column
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
     @Column
     private long salary;
