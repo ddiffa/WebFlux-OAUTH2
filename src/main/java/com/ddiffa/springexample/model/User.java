@@ -15,7 +15,7 @@ public class User {
     @Column
     private String firstName;
     @Column
-    private String lasName;
+    private String lastName;
     @Column
     private String username;
     @Column
@@ -33,7 +33,7 @@ public class User {
 
     public User(String firstName, String lasName, String username, String address, String password, long salary, int age) {
         this.firstName = firstName;
-        this.lasName = lasName;
+        this.lastName = lasName;
         this.username = username;
         this.address = address;
         this.password = password;
@@ -57,12 +57,12 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getLasName() {
-        return lasName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLasName(String lasName) {
-        this.lasName = lasName;
+    public void setLastName(String lasName) {
+        this.lastName = lasName;
     }
 
     public String getUsername() {

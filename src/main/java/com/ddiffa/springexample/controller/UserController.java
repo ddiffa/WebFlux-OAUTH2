@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/v1")
 public class UserController {
 
     @Autowired
@@ -28,7 +28,7 @@ public class UserController {
         return userService.getUser(id);
     }
 
-    @PutMapping
+    @PutMapping("/users/{id}")
     public User update(@PathVariable long id, @RequestBody User user) {
         user.setId(id);
         return userService.save(user);
