@@ -1,23 +1,41 @@
 package com.ddiffa.springexample.model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
     private long id;
+    @Column
+    private String firstName;
+    @Column
+    private String lasName;
+    @Column
     private String username;
+    @Column
+    private String address;
+    @Column
+    @JsonIgnore
     private String password;
+    @Column
     private long salary;
+    @Column
     private int age;
 
     public User() {
     }
 
-    public User(String username, String password, long salary, int age) {
+    public User(String firstName, String lasName, String username, String address, String password, long salary, int age) {
+        this.firstName = firstName;
+        this.lasName = lasName;
         this.username = username;
+        this.address = address;
         this.password = password;
         this.salary = salary;
         this.age = age;
@@ -31,12 +49,36 @@ public class User {
         this.id = id;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLasName() {
+        return lasName;
+    }
+
+    public void setLasName(String lasName) {
+        this.lasName = lasName;
+    }
+
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getPassword() {
