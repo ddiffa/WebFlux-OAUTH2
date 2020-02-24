@@ -14,7 +14,7 @@ such as Facebook, GitHub, and DigitalOcean. It works by delegating user authenti
 and authorizing third-party applications to access the user account. OAuth 2 provides authorization flows for web and desktop applications, and mobile devices.
 
 ## Generate AuthToken
-In the header we have username and password as Diffa and password respectively as Authorization header.
+In the header we have username and password as Authorization header.
 As per Oauth2 specification, Access token request should use application/x-www-form-urlencoded.Following is the setup.
   - Select Authorization -> Change type to <b>Basic Auth</b>
   - set username = client
